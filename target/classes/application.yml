@@ -1,0 +1,36 @@
+server:
+  port: 8443
+  servlet:
+    context-path: /webapp
+  ssl:
+    key-store: classpath:ssl/lucifer.keystore
+    key-store-password: admin@123
+    key-alias: tomcat
+    key-store-type: JKS
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/lucifer?serverTimezone=GMT%2B8&useUnicode=true&characterEncoding=UTF8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: lucifer
+    password: admin123
+  redis:
+    host: localhost
+    port: 6379
+    jedis:
+      pool:
+        max-active: 1000
+        max-wait: 5ms
+        max-idle: 8
+        min-idle: 2
+    timeout: 500
+
+logging:
+  level:
+    org.springframework.web: DEBUG
+
+
+
+host-name: lucifer
+host-email: lu_ciffier@hotmail.com
+host-address: 127.0.0.1
